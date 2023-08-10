@@ -1,0 +1,14 @@
+main: nade.empty.horse.EmptyHorse
+name: EmptyHorse
+version: -release
+authors: [empty.1808]
+api-version: 1.16.5
+depend: [Vault]
+commands:
+  horse:
+    description: 'plugin cho thuê ngựa!'
+    aliases: [ngua, thuengua]
+permission:
+  EmptyHorse.usage:
+    description: 'Cho phép sử dụng lệnh /horse'
+    default: op

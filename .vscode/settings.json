@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": ["src/main/java", "src/main/resource"],
+    "java.project.outputPath": "bin",
+    "java.project.exportJar.targetPath": "C:\\Users\\case\\Desktop\\Tester\\1.12.2\\plugins",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\case\\Downloads\\spigot-1.12.2.jar",
+        "c:\\Users\\case\\Desktop\\librarys\\Vault.jar"
+    ],
+    "java.compile.nullAnalysis.mode": "disabled"
+}
