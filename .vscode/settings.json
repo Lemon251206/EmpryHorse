@@ -1,11 +1,9 @@
 {
     "java.project.sourcePaths": ["src/main/java", "src/main/resource"],
     "java.project.outputPath": "bin",
-    "java.project.exportJar.targetPath": "C:\\Users\\VIP SSD\\OneDrive\\Máy tính\\empty\\output",
+    "java.project.exportJar.targetPath": "output",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "c:\\Users\\VIP SSD\\OneDrive\\Máy tính\\empty\\librarys\\Vault.jar",
-        "c:\\Users\\VIP SSD\\OneDrive\\Máy tính\\empty\\librarys\\spigot-1.12.2.jar"
+        "lib/**/*.jar"
     ],
     "java.compile.nullAnalysis.mode": "disabled"
 }

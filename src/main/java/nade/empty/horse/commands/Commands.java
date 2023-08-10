@@ -273,7 +273,7 @@ public class Commands implements CommandExecutor{
 
     private boolean isPlayer(CommandSender sender) {
         try {
-            return Objects.isNull(Player.class.cast(sender));
+            return !Objects.isNull(Player.class.cast(sender));
         } catch (Exception e) {
             return false;
         }
