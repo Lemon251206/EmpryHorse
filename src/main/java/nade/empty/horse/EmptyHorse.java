@@ -5,8 +5,11 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.google.common.collect.Lists;
+
 import nade.empty.horse.commands.Commands;
 import nade.empty.horse.listeners.Handlers;
+import nade.empty.horse.listeners.InventoryEvents;
 import nade.empty.horse.listeners.MountEvents;
 import nade.empty.horse.mechanics.HorseObject;
 import nade.empty.horse.utils.CustomConfig;
@@ -40,12 +43,13 @@ public class EmptyHorse extends JavaPlugin{
 
         Bukkit.getPluginCommand("horse").setExecutor(new Commands(this));
         Bukkit.getPluginManager().registerEvents(new MountEvents(), this);
+        Bukkit.getPluginManager().registerEvents(new InventoryEvents(), this);
         super.onEnable();
     }
 
     @Override
     public void onDisable() {
-        for (HorseObject horse : Handlers.mounts.values()) {
+        for (HorseObject horse : Lists.newArrayList(Handlers.mounts.values())) {
             horse.dismount();
         }
         super.onDisable();

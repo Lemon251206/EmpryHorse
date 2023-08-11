@@ -12,6 +12,7 @@ import org.bukkit.entity.Horse;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Horse.Color;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import nade.empty.horse.EmptyHorse;
 import nade.empty.horse.listeners.Handlers;
@@ -41,8 +42,9 @@ public class HorseObject {
         horse.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(20);
         horse.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.225);
         horse.setAdult();
-        horse.getInventory().setSaddle(new ItemStack(Material.SADDLE));
+        horse.getInventory().setSaddle(this.getSaddle());
         horse.setOwner(player);
+        horse.getInventory().setArmor(this.getArmor());
         if (!Objects.isNull(displayname)) {
             horse.setCustomName(Colors.vanilla(displayname));
             horse.setCustomNameVisible(true);
@@ -78,6 +80,8 @@ public class HorseObject {
 
     public void dismount() {
         this.getHorse().removePassenger(Bukkit.getPlayer(owner));
+        this.getHorse().remove();
+        Handlers.mounts.remove(owner);
     }
 
     public void setDisplayname(String displayname) {
@@ -106,5 +110,21 @@ public class HorseObject {
 
     public Horse getHorse() {
         return horse;
+    }
+
+    private ItemStack getSaddle() {
+        ItemStack item = new ItemStack(Material.SADDLE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName(" ");
+        item.setItemMeta(meta);
+        return item;
+    }
+
+    private ItemStack getArmor() {
+        ItemStack item = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName(" ");
+        item.setItemMeta(meta);
+        return item;
     }
 }
