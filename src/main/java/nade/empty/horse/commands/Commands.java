@@ -31,6 +31,10 @@ public class Commands implements CommandExecutor{
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (!isPlayer(sender)) {
+            sender.sendMessage(Colors.vanilla("&cChỉ người chơi mới được sử dụng lệnh này!!!"));
+            return false;
+        }
         if (args.length == 0) {
             return onInfo(sender);
         }
@@ -265,5 +269,13 @@ public class Commands implements CommandExecutor{
         Database.update(player.getUniqueId(), horse);
         horse.mount();
         return true;
+    }
+
+    private boolean isPlayer(CommandSender sender) {
+        try {
+            return !Objects.isNull(Player.class.cast(sender));
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

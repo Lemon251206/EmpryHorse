@@ -1,4 +1,4 @@
 rent-time: 21600 #thời gian thuê và gia hạn ngựa (6 tiếng);
 rent-cost: 6000 #chi phí thuê và gia hạn ngụa
 buy-cost: 600000 #chi phí mua vĩnh viễn ngựa
-money-format: '&4$'
+money-format: '&4$' #
