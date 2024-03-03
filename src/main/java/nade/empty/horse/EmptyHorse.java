@@ -59,10 +59,12 @@ public class EmptyHorse extends JavaPlugin{
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
             return false;
         }
+        System.err.println('1');
         RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
         if (rsp == null) {
             return false;
         }
+        System.err.println('2');
         economy = rsp.getProvider();
         return economy != null;
     }

@@ -79,6 +79,7 @@ public class HorseObject {
     }
 
     public void dismount() {
+        if (Objects.isNull(this.getHorse()) || Objects.isNull(this.getHorse().getPassengers())) return;
         this.getHorse().removePassenger(Bukkit.getPlayer(owner));
         this.getHorse().remove();
         Handlers.mounts.remove(owner);

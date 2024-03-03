@@ -37,7 +37,6 @@ public class DateFormat {
         if (seconds > 0) {
             format.add(seconds + " giây");
         }
-
         if (format.size() <= 0) {
             format.add(0 + " giây");
         }
